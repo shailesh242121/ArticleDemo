@@ -1,0 +1,30 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+        
+    }
+    dependencies {
+
+        //Gradle 3.x is not compatible with Sonar plugin, you have to choose Gradle 2.x.
+
+
+        classpath 'com.android.tools.build:gradle:3.3.0'
+        
+
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

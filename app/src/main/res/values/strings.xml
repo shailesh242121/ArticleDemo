@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Article Demo</string>
+    <string name="title_text">Title: %s</string>
+    <string name="by_placeholder">By : %s</string>
+    <string name="publishBy_placeholder">Published on : %s</string>
+    <string name="source_placeholder">Source : %s</string>
+    <string name="abstract_placeholer">Abstract : %s</string>
+</resources>
