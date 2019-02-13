@@ -1,5 +1,7 @@
 package com.articledemo.network.model;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,12 +25,12 @@ public class NetworkResponse {
         this.copyright = copyright;
     }
 
-    public int getNum_results() {
-        return num_results;
+    public int getNumResults() {
+        return numResults;
     }
 
-    public void setNum_results(int num_results) {
-        this.num_results = num_results;
+    public void setNumResults(int numResults) {
+        this.numResults = numResults;
     }
 
     public List<Articles> getResults() {
@@ -40,7 +42,8 @@ public class NetworkResponse {
     }
 
     private String copyright;
-    private int num_results;
+    @SerializedName("num_results")
+    private int numResults;
 
     List<Articles> results = new ArrayList<>();
 }

@@ -17,12 +17,12 @@ import java.util.List;
 /**
  * Article adapter showing in list
  */
-public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ViewHolder> {
+public class ArticleListAdapter extends RecyclerView.Adapter<ArticleListAdapter.ViewHolderArticle> {
 
     private List<Articles> mList = new ArrayList<>();
     private IRecyclerViewClick mCLick;
 
-    public ArticleAdapter(List<Articles> list) {
+    public ArticleListAdapter(List<Articles> list) {
         this.mList = list;
     }
 
@@ -37,13 +37,13 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ViewHold
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public ViewHolderArticle onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.row_article, viewGroup, false);
-        return new ViewHolder(view);
+        return new ViewHolderArticle(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int post) {
+    public void onBindViewHolder(@NonNull ViewHolderArticle viewHolder, final int post) {
         viewHolder.setData(mList.get(post));
         viewHolder.itemView.setOnClickListener(v -> {
             if (mCLick != null) {
@@ -58,13 +58,13 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ViewHold
     }
 
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolderArticle extends RecyclerView.ViewHolder {
 
         private TextView tvHeader;
         private TextView tvFooter;
         private TextView tvTime;
 
-        public ViewHolder(@NonNull View itemView) {
+        public ViewHolderArticle(@NonNull View itemView) {
             super(itemView);
             tvHeader = itemView.findViewById(R.id.tv_name);
             tvFooter = itemView.findViewById(R.id.tv_detail);
@@ -79,7 +79,7 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ViewHold
         public void setData(Articles articles) {
             tvHeader.setText(articles.getTitle());
             tvFooter.setText(articles.getByline());
-            tvTime.setText(articles.getPublished_date());
+            tvTime.setText(articles.getPublishedDate());
         }
     }
 }

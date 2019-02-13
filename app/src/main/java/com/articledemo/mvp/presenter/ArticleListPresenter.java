@@ -29,7 +29,7 @@ public class ArticleListPresenter implements BasePresenter {
      */
     public void loadArticles(int pageNumber)
     {
-        // TODO Netowrk status check before call
+        //  Netowrk status check before call
         NetworkHit.getInstance().getClient().getArticles(String.valueOf(pageNumber), BuildConfig.API_KEY).enqueue(new Callback<NetworkResponse>() {
             @Override
             public void onResponse(Call<NetworkResponse> call, Response<NetworkResponse> response) {
@@ -49,7 +49,7 @@ public class ArticleListPresenter implements BasePresenter {
 
     @Override
     public void onDestroy() {
-  //TODO Remove all the assigned variable
+  // Remove all the assigned variable
     }
 
 

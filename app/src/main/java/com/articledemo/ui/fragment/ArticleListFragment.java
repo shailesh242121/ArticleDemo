@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
 import com.articledemo.R;
-import com.articledemo.adapter.ArticleAdapter;
+import com.articledemo.adapter.ArticleListAdapter;
 import com.articledemo.helper.Tools;
 import com.articledemo.interfaces.IRecyclerViewClick;
 import com.articledemo.mvp.presenter.ArticleListPresenter;
@@ -59,7 +59,7 @@ public class ArticleListFragment extends BaseFragment implements ArticleView, IR
     /**
      *  Adapter to show the list content
      */
-    private ArticleAdapter adapter;
+    private ArticleListAdapter adapter;
 
     /**
      *  this is now fixed to 1 can have values 1 ,7 and 30 as how many older days of article you want to show
@@ -78,7 +78,6 @@ public class ArticleListFragment extends BaseFragment implements ArticleView, IR
     public View onCreateView( LayoutInflater inflater,  ViewGroup container, Bundle savedInstanceState) {
         if(view ==null ) {
             view = inflater.inflate(R.layout.fragment_article_list, container, false);
-            //  ButterKnife.bind(this, view);
             initFragment(view);
         }
         return view;
@@ -104,12 +103,7 @@ public class ArticleListFragment extends BaseFragment implements ArticleView, IR
         loadArticles();
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
 
-
-    }
 
     /**
      *  polls network to load articles
@@ -125,19 +119,20 @@ public class ArticleListFragment extends BaseFragment implements ArticleView, IR
         pgBar.setVisibility(View.GONE);
         if(isReloading)
         refreshLayout.setRefreshing(false);
-        if (mArticleList != null && !mArticleList.isEmpty()) {
+
+        if(mArticleList == null || mArticleList.isEmpty())
+            llEmpty.setVisibility(View.VISIBLE);
+        else{
             llEmpty.setVisibility(View.GONE);
             mList.addAll(mArticleList);
             if (adapter == null || isReloading) {
                 isReloading = false;
-                adapter = new ArticleAdapter(mArticleList);
+                adapter = new ArticleListAdapter(mArticleList);
                 adapter.setListener(this);
                 rclArticleList.setAdapter(adapter);
             } else adapter.notifyDataSetChanged();
-        }else
-        {
-            llEmpty.setVisibility(View.VISIBLE);
         }
+
 
     }
 

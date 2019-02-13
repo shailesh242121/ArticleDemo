@@ -3,6 +3,8 @@ package com.articledemo.network.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,7 +24,7 @@ public class Media implements Parcelable {
         subtype = in.readString();
         caption = in.readString();
         copyright = in.readString();
-        approved_for_syndication = in.readString();
+        approvedForSyndication = in.readString();
     }
 
     public static final Creator<Media> CREATOR = new Creator<Media>() {
@@ -69,15 +71,16 @@ public class Media implements Parcelable {
         this.copyright = copyright;
     }
 
-    public String getApproved_for_syndication() {
-        return approved_for_syndication;
+    public String getApprovedSyndication() {
+        return approvedForSyndication;
     }
 
-    public void setApproved_for_syndication(String approved_for_syndication) {
-        this.approved_for_syndication = approved_for_syndication;
+    public void setApprovedSyndication(String approvedForSyndication) {
+        this.approvedForSyndication = approvedForSyndication;
     }
 
-    private String approved_for_syndication;
+    @SerializedName("approved_for_syndication")
+    private String approvedForSyndication;
 
     public List<MediaMetadata> getMediaMetadata() {
         return mediaMetadata;
@@ -98,6 +101,6 @@ public class Media implements Parcelable {
         dest.writeString(subtype);
         dest.writeString(caption);
         dest.writeString(copyright);
-        dest.writeString(approved_for_syndication);
+        dest.writeString(approvedForSyndication);
     }
 }

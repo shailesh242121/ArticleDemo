@@ -4,13 +4,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v7.app.AppCompatActivity;
 
 import com.articledemo.R;
 
 /**
  * Splash activity
  */
-public class SplashActivity extends BaseActivity {
+public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,16 +22,16 @@ public class SplashActivity extends BaseActivity {
     protected void onResume() {
         super.onResume();
         //Put a delay of 3 Seconds to start main activity
-        mHandler.sendEmptyMessageDelayed(100,3000);
+        mHandlerCallback.sendEmptyMessageDelayed(100,3000);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        mHandler.removeMessages(100);
+        mHandlerCallback.removeMessages(100);
     }
 
-    private Handler mHandler = new Handler()
+    private Handler mHandlerCallback = new Handler()
     {
         @Override
         public void handleMessage(Message msg) {

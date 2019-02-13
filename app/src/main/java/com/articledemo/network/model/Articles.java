@@ -15,21 +15,26 @@ import java.util.List;
 public class Articles implements Parcelable {
 
     private String url;
-    private String adx_keywords;
+    @SerializedName("adx_keywords")
+    private String adxKeywords;
     private String subsection;
-    private String email_count;
+    @SerializedName("email_count")
+    private String emailCount;
     private String column;
-    private String eta_id;
+    @SerializedName("eta_id")
+    private String etaId;
     private String section;
     private double id;
-    private double asset_id;
+    @SerializedName("asset_id")
+    private double assetId;
     private String nytdsection;
     private String byline;
     private String type;
     private String title;
     @SerializedName("abstract")
     private String abstractType;
-    private String published_date;
+    @SerializedName("published_date")
+    private String publishedDate;
     private String source;
 
     public List<Media> getMedia() {
@@ -44,20 +49,20 @@ public class Articles implements Parcelable {
 
     protected Articles(Parcel in) {
         url = in.readString();
-        adx_keywords = in.readString();
+        adxKeywords = in.readString();
         subsection = in.readString();
-        email_count = in.readString();
+        emailCount = in.readString();
         column = in.readString();
-        eta_id = in.readString();
+        etaId = in.readString();
         section = in.readString();
         id = in.readDouble();
-        asset_id = in.readDouble();
+        assetId = in.readDouble();
         nytdsection = in.readString();
         byline = in.readString();
         type = in.readString();
         title = in.readString();
         abstractType = in.readString();
-        published_date = in.readString();
+        publishedDate = in.readString();
         source = in.readString();
 
     }
@@ -82,12 +87,12 @@ public class Articles implements Parcelable {
         this.url = url;
     }
 
-    public String getAdx_keywords() {
-        return adx_keywords;
+    public String getAdxKeywords() {
+        return adxKeywords;
     }
 
-    public void setAdx_keywords(String adx_keywords) {
-        this.adx_keywords = adx_keywords;
+    public void setAdxKeywords(String adxKeywords) {
+        this.adxKeywords = adxKeywords;
     }
 
     public String getSubsection() {
@@ -98,12 +103,12 @@ public class Articles implements Parcelable {
         this.subsection = subsection;
     }
 
-    public String getEmail_count() {
-        return email_count;
+    public String getEmailCount() {
+        return emailCount;
     }
 
-    public void setEmail_count(String email_count) {
-        this.email_count = email_count;
+    public void setEmailCount(String emailCount) {
+        this.emailCount = emailCount;
     }
 
     public String getColumn() {
@@ -114,12 +119,12 @@ public class Articles implements Parcelable {
         this.column = column;
     }
 
-    public String getEta_id() {
-        return eta_id;
+    public String getEtaId() {
+        return etaId;
     }
 
-    public void setEta_id(String eta_id) {
-        this.eta_id = eta_id;
+    public void setEtaId(String etaId) {
+        this.etaId = etaId;
     }
 
     public String getSection() {
@@ -138,12 +143,12 @@ public class Articles implements Parcelable {
         this.id = id;
     }
 
-    public double getAsset_id() {
-        return asset_id;
+    public double getAssetId() {
+        return assetId;
     }
 
-    public void setAsset_id(double asset_id) {
-        this.asset_id = asset_id;
+    public void setAssetId(double assetId) {
+        this.assetId = assetId;
     }
 
     public String getNytdsection() {
@@ -186,12 +191,12 @@ public class Articles implements Parcelable {
         this.abstractType = abstractType;
     }
 //
-    public String getPublished_date() {
-        return published_date;
+    public String getPublishedDate() {
+        return publishedDate;
     }
 
-    public void setPublished_date(String published_date) {
-        this.published_date = published_date;
+    public void setPublishedDate(String publishedDate) {
+        this.publishedDate = publishedDate;
     }
 //
     public String getSource() {
@@ -210,20 +215,20 @@ public class Articles implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(url);
-        dest.writeString(adx_keywords);
+        dest.writeString(adxKeywords);
         dest.writeString(subsection);
-        dest.writeString(email_count);
+        dest.writeString(emailCount);
         dest.writeString(column);
-        dest.writeString(eta_id);
+        dest.writeString(etaId);
         dest.writeString(section);
         dest.writeDouble(id);
-        dest.writeDouble(asset_id);
+        dest.writeDouble(assetId);
         dest.writeString(nytdsection);
         dest.writeString(byline);
         dest.writeString(type);
         dest.writeString(title);
         dest.writeString(abstractType);
-        dest.writeString(published_date);
+        dest.writeString(publishedDate);
         dest.writeString(source);
 
     }

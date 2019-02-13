@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.articledemo.R;
 import com.articledemo.network.model.Articles;
 
+
 /**
  * showing detail of the article
  */
@@ -18,8 +19,11 @@ public class DetailFragment extends BaseFragment {
     /**
      *  Item fields
      */
-    TextView tvTitle,tvDetail,tvTime;
-    TextView tvSource,tvAbstract;
+    private TextView tvTitle;
+    private TextView tvDetail;
+    private TextView tvTime;
+    private TextView tvSource;
+    private TextView tvAbstract;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -42,13 +46,17 @@ public class DetailFragment extends BaseFragment {
         if(getArguments()!=null)
         {
             Articles article = getArguments().getParcelable("article");
-            tvTitle.setText(String.format(getString(R.string.title_text),article.getTitle()));
-            tvDetail.setText(article.getByline());
-            tvTime.setText(String.format(getString(R.string.publishBy_placeholder),article.getPublished_date()));
-            tvSource.setText(String.format(getString(R.string.source_placeholder),article.getSource()));
-            tvAbstract.setText(String.format(getString(R.string.abstract_placeholer),article.getAbstractType()));
-
+           setDetails(article);
         }
+
+    }
+
+    private void setDetails(Articles article) {
+        tvTitle.setText(String.format(getString(R.string.title_text),article.getTitle()));
+        tvDetail.setText(article.getByline());
+        tvTime.setText(String.format(getString(R.string.publishBy_placeholder),article.getPublishedDate()));
+        tvSource.setText(String.format(getString(R.string.source_placeholder),article.getSource()));
+        tvAbstract.setText(String.format(getString(R.string.abstract_placeholer),article.getAbstractType()));
 
     }
 }

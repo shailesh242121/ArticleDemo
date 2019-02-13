@@ -8,6 +8,11 @@ import android.widget.Toast;
  */
 public class Tools {
 
+    private Tools()
+    {
+
+    }
+
     /**
      * Show the toast to user as a message
      *
