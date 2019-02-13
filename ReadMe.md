@@ -25,7 +25,7 @@
 ## Way Two by command line
  1. Take checkout project
  2. Go to the project directory
- 3. Type a command "gradlew/assembleDebug"
+ 3. Type a command "gradlew assembleDebug"
     this will create a debug build
  4. Type a command "gradlew assembleRelease" this will create a release build.
 
@@ -34,7 +34,7 @@
 Application is integrated with jUnitTest 4.0.And also created some file for testing purpose
 You can create your own to test.
 
-#Demo builds can be found in app/builds directory
+# Demo builds can be found in app/builds directory
 
  
  
