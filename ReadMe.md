@@ -4,7 +4,7 @@
 ### user will see the list of article on first page and can tap to see the details of that article.
 ### 
 
-## Application Component having in MVC pattern
+## Application Component having in MVP pattern
 > Activity
 
 > Fragment (Article list fragment & Detail Fragment)
