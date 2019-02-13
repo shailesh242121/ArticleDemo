@@ -6,5 +6,5 @@ package com.articaldemo.network;
 public interface Constants {
   //  https://api.nytimes.com/svc/mostpopular/v2//viewed/7.json?api-key=HNevluBnsRvOouPHLDd4UuSpVaH86A5D
     String BASE_URL = "https://api.nytimes.com/svc/mostpopular/v2/";
-    String API_Key = "HNevluBnsRvOouPHLDd4UuSpVaH86A5D";
+    String API_Key = "";
 }
