@@ -19,7 +19,7 @@ android {
             keyAlias "article"
             keyPassword "article@123"
         }
-   }
+    }
 
     buildTypes {
         release {
@@ -37,7 +37,6 @@ android {
     }
 
 
-
 }
 
 dependencies {
@@ -50,10 +49,10 @@ dependencies {
 
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     // add this for intent mocking support
-  //  androidtestImplementation 'com.android.support.test.espresso:espresso-intents:2.2.2'
+    //  androidtestImplementation 'com.android.support.test.espresso:espresso-intents:2.2.2'
 
     // add this for webview testing support
-  //  androidtestImplementation 'com.android.support.test.espresso:espresso-web:2.2.2'
+    //  androidtestImplementation 'com.android.support.test.espresso:espresso-web:2.2.2'
 
     androidTestImplementation 'com.android.support.test:rules:1.0.2'
 
@@ -65,5 +64,5 @@ dependencies {
     implementation 'com.android.support:cardview-v7:28.0.0'
 
     //  implementation 'com.jakewharton:butterknife:10.0.0'
-   // annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
+    // annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
 }

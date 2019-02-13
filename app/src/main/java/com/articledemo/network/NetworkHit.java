@@ -11,32 +11,31 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class NetworkHit {
 
     /**
-     *  Implement the retrofit a Squre library for network call
+     * singleton object
+     */
+    public static NetworkHit networkHit = new NetworkHit();
+    /**
+     * Implement the retrofit a Squre library for network call
      */
     private static Retrofit retrofit = null;
 
-    private NetworkHit()
-    {
+    private NetworkHit() {
 
     }
 
     /**
-     * singleton object
-     */
-    public static NetworkHit networkHit = new NetworkHit();
-
-    /**
-     *  Getting instance of Network hit
+     * Getting instance of Network hit
+     *
      * @return
      */
-    public static NetworkHit getInstance()
-    {
+    public static NetworkHit getInstance() {
         return networkHit;
     }
 
 
     /**
-     *  Get instance of APi Call
+     * Get instance of APi Call
+     *
      * @return
      */
     public IApis getClient() {

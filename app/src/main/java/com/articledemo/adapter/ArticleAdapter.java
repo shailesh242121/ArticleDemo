@@ -15,30 +15,30 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *  Article adapter showing in list
+ * Article adapter showing in list
  */
 public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ViewHolder> {
 
     private List<Articles> mList = new ArrayList<>();
     private IRecyclerViewClick mCLick;
-    public ArticleAdapter(List<Articles> list)
-    {
+
+    public ArticleAdapter(List<Articles> list) {
         this.mList = list;
     }
 
     /**
-     *  Recycler view item click listener
+     * Recycler view item click listener
+     *
      * @param click
      */
-    public void setListener(IRecyclerViewClick click)
-    {
+    public void setListener(IRecyclerViewClick click) {
         mCLick = click;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.row_article,viewGroup,false);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.row_article, viewGroup, false);
         return new ViewHolder(view);
     }
 
@@ -46,9 +46,9 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ViewHold
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int post) {
         viewHolder.setData(mList.get(post));
         viewHolder.itemView.setOnClickListener(v -> {
-           if(mCLick!=null){
-               mCLick.onItemClick(post,mList.get(post));
-           }
+            if (mCLick != null) {
+                mCLick.onItemClick(post, mList.get(post));
+            }
         });
     }
 
@@ -58,11 +58,11 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ViewHold
     }
 
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
-      private TextView tvHeader;
-      private TextView tvFooter;
-      private TextView tvTime;
+        private TextView tvHeader;
+        private TextView tvFooter;
+        private TextView tvTime;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -72,7 +72,8 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ViewHold
         }
 
         /**
-         *  Setting data for the row
+         * Setting data for the row
+         *
          * @param articles data for row
          */
         public void setData(Articles articles) {
